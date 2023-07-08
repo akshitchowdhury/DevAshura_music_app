@@ -46,7 +46,7 @@ nav ul li{
 
 .bottom{
     position: sticky;
-    height: 100px;
+    height: 80px;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -69,16 +69,16 @@ nav ul li{
 }
 
 .container{
-    min-height: 72vh;
+    min-height: 60vh;
     background-color: black;
     color: white;
     font-family: 'Varela Round', sans-serif;
     display: flex;
     margin: 23px auto;
-    width: 70%;
+    width: 60%;
     border-radius: 13px;
     padding: 34px;
-    background-image: url("images/punkhp2.jpg") ;
+    background-image: url("images/edm.jpg") ;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     
