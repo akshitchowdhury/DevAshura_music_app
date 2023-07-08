@@ -83,3 +83,41 @@ nav ul li{
     background-size: 100% 100%;
     
 }
+
+.songItem{
+
+    height: 50px;
+    display: flex;
+    background-color: white;
+    width: 60%;
+    color: black;
+    margin: 12px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.songItem img{
+
+    width: 43px;
+    margin: 0px 23px;
+}
+
+.timeStamp {
+
+    margin: 0px 13px;
+
+}
+
+
+.songItem i{
+    cursor: pointer;
+}
+.songItem img{
+    border-radius: 34px;
+}
+
+.songItemContainer{
+
+    margin-top: 34px;
+}
