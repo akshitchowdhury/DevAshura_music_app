@@ -46,7 +46,7 @@ nav ul li{
 
 .bottom{
     position: sticky;
-    height: 20%;
+    height: 90px;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -120,4 +120,10 @@ nav ul li{
 .songItemContainer{
 
     margin-top: 34px;
+}
+
+.songInfo{
+    position: absolute;
+
+    left: 10vw;
 }
