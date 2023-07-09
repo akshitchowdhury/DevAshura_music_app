@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 body{
-    background-color: antiquewhite;
+    background-color: #fe019a;
 }
 
 *{
@@ -10,7 +10,6 @@ body{
     margin: 0;
 }
 nav{
-
     
 font-family: 'Ubuntu', sans-serif;
 }
@@ -18,7 +17,8 @@ font-family: 'Ubuntu', sans-serif;
 nav ul{
     display: flex;
     list-style-type: none;
-    background-color: black;
+    /* background-color: black; */
+    background-color: #82004e;
     height: 65px;
     color: white;
     align-items: center;
@@ -47,7 +47,8 @@ nav ul li{
 .bottom{
     position: sticky;
     height: 90px;
-    background-color: black;
+    /* background-color: black; */
+    background-color: #82004e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,12 +62,17 @@ nav ul li{
 
 .icons i{
     cursor: pointer;
+    pointer-events: all;
 }
 
 #myProgressBar{
 
     width: 80vw;
+    cursor: pointer;
+    pointer-events: fill;
 }
+
+
 
 .container{
     min-height: 60vh;
@@ -78,7 +84,7 @@ nav ul li{
     width: 60%;
     border-radius: 13px;
     padding: 34px;
-    background-image: url("images/edm.jpg") ;
+    background-image: url("images/edm3.jpg") ;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     
@@ -123,7 +129,23 @@ nav ul li{
 }
 
 .songInfo{
+
     position: absolute;
 
     left: 10vw;
+
+    font-family: 'Varela Round', sans-serif;
+
 }
+
+.songInfo img{
+
+    width: 10%;
+
+    height: 10%;
+    
+    opacity: 0;
+    
+    transition: opacity 1s ease-in;
+}
+
