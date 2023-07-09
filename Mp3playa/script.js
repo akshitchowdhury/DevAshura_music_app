@@ -4,6 +4,7 @@ let songIndex = 0;
 
 let audioElement = new Audio('song-list/FOD.mp3')
 
+
 // audioElement.play()
 
 let masterPlay = document.getElementById("masterPlay")
@@ -15,12 +16,12 @@ let gif = document.getElementById("gif")
 let songItems = Array.from(document.getElementsByClassName("songItem"))
 
 
-let songs = [
-    {songName : "Fear Of the Dark", songPath : "song-list/FOD.mp3", songCover : "covers/cover1.jpg"},
-    {songName : "Wicker Man", songPath : "song-list/WM.mp3", songCover : "covers/cover2.jpg"},
-    {songName : "Rime of the ancient miranor", songPath : "song-list/Rime.mp3", songCover : "covers/cover3.jpg"},
-    {songName : "Phantom of Opera", songPath : "song-list/POO.mp3", songCover : "covers/cover4.jpg"},
-    {songName : "Flight of Icarus", songPath : "song-list/FOI.mp3", songCover : "covers/cover5.jpg"},
+var songs = [
+    {songName : "Fear Of the Dark", songPath : "song-list/0.mp3", songCover : "covers/cover1.jpg"},
+    {songName : "Wicker Man", songPath : "song-list/1.mp3", songCover : "covers/cover2.jpg"},
+    {songName : "Rime of the ancient miranor", songPath : "song-list/2.mp3", songCover : "covers/cover3.jpg"},
+    {songName : "Phantom of Opera", songPath : "song-list/3.mp3", songCover : "covers/cover4.jpg"},
+    {songName : "Flight of Icarus", songPath : "song-list/4.mp3", songCover : "covers/cover5.jpg"},
 ]
 
 
@@ -101,11 +102,33 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach((element)=>{
         makeAllPlays()
   
         
-       
 
+    // var mode = function(){   for(var i =0 ; i< document.querySelector("i .songItemPlay "); i++){
+
+    //             document.querySelector(".songItemPlay #"+i)
+
+    //    }
+    // }
+
+    
+    // var index = document.getElementsByClassName("songItemPlay")[e].src
+
+    
+    var index = parseInt(e.target.id)
+
+    
         e.target.classList.remove('fa-play-circle')
         
         e.target.classList.add('fa-pause-circle')
+
+        audioElement.src = "song-list/"+index+".mp3"
+        audioElement.currentTime = 0;
+
+        audioElement.play()
+
+        masterPlay.classList.remove('fa-play-circle')
+        
+        masterPlay.classList.add('fa-pause-circle')
   
     })
 })
