@@ -14,11 +14,11 @@ let gif = document.getElementById("gif")
 
 
 let songs = [
-    {songName : "Fear Of the Dark", songPath : "FOD.mp3", songCover : "cover1.jpg"},
-    {songName : "Fear Of the Dark", songPath : "FOD.mp3", songCover : "cover1.jpg"},
-    {songName : "Fear Of the Dark", songPath : "FOD.mp3", songCover : "cover1.jpg"},
-    {songName : "Fear Of the Dark", songPath : "FOD.mp3", songCover : "cover1.jpg"},
-    {songName : "Fear Of the Dark", songPath : "FOD.mp3", songCover : "cover1.jpg"}
+    {songName : "Fear Of the Dark", songPath : "song-list/FOD.mp3", songCover : "covers/cover1.jpg"},
+    {songName : "Wicker Man", songPath : "song-list/WM.mp3", songCover : "covers/cover2.jpg"},
+    {songName : "Rime of the ancient miranor", songPath : "song-list/Rime.mp3", songCover : "covers/cover3.jpg"},
+    {songName : "Phantom of Opera", songPath : "song-list/POO.mp3", songCover : "covers/cover4.jpg"},
+    {songName : "Flight of Icarus", songPath : "song-list/FOI.mp3", songCover : "covers/cover5.jpg"}
 ]
 
 //handle play/pause button
@@ -47,9 +47,16 @@ masterPlay.addEventListener('click', ()=>{
 audioElement.addEventListener("timeupdate", ()=>{
 
     //logic to calculate progress% and update the progress bar
-   var progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
+    progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
 
     myProgressBar.value = progress;
 
 
+})
+
+
+
+myProgressBar.addEventListener('change', ()=>{
+
+    audioElement.currentTime = ((myProgressBar.value*audioElement.duration)/100)
 })
