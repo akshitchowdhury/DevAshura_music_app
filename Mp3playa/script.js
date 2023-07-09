@@ -12,14 +12,33 @@ let myProgressBar = document.getElementById("myProgressBar")
 
 let gif = document.getElementById("gif")
 
+let songItems = Array.from(document.getElementsByClassName("songItem"))
+
 
 let songs = [
     {songName : "Fear Of the Dark", songPath : "song-list/FOD.mp3", songCover : "covers/cover1.jpg"},
     {songName : "Wicker Man", songPath : "song-list/WM.mp3", songCover : "covers/cover2.jpg"},
     {songName : "Rime of the ancient miranor", songPath : "song-list/Rime.mp3", songCover : "covers/cover3.jpg"},
     {songName : "Phantom of Opera", songPath : "song-list/POO.mp3", songCover : "covers/cover4.jpg"},
-    {songName : "Flight of Icarus", songPath : "song-list/FOI.mp3", songCover : "covers/cover5.jpg"}
+    {songName : "Flight of Icarus", songPath : "song-list/FOI.mp3", songCover : "covers/cover5.jpg"},
 ]
+
+
+
+songItems.forEach((element, i)=>{
+
+    // console.log(element, i)
+    document.getElementsByClassName("cover")[i].src = songs[i].songCover
+    
+    document.getElementsByClassName("songName")[i].innerText = songs[i].songName
+    })
+
+    // for(var i=0 ; i<songs.length; i++){
+
+    //     document.getElementsByClassName("cover")[i].src = songs[i].songCover
+    
+    // document.getElementsByClassName("songName")[i].innerText = songs[i].songName
+    // }
 
 //handle play/pause button
 
@@ -59,4 +78,34 @@ audioElement.addEventListener("timeupdate", ()=>{
 myProgressBar.addEventListener('change', ()=>{
 
     audioElement.currentTime = ((myProgressBar.value*audioElement.duration)/100)
+})
+
+
+const makeAllPlays =function(){ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    
+                    
+    element.classList.add('fa-play-circle')
+
+    element.classList.remove('fa-pause-circle')
+    console.log(element)
+
+})
+
+}
+
+Array.from(document.getElementsByClassName("songItemPlay")).forEach((element)=>{
+
+    element.addEventListener('click', (e)=>{
+
+        // console.log(e)
+        makeAllPlays()
+  
+        
+       
+
+        e.target.classList.remove('fa-play-circle')
+        
+        e.target.classList.add('fa-pause-circle')
+  
+    })
 })
