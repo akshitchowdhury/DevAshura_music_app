@@ -27,7 +27,7 @@ let songs = [
 
 songItems.forEach((element, i)=>{
 
-    console.log(element, i)
+    // console.log(element, i)
     document.getElementsByClassName("cover")[i].src = songs[i].songCover
     
     document.getElementsByClassName("songName")[i].innerText = songs[i].songName
@@ -80,3 +80,16 @@ myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = ((myProgressBar.value*audioElement.duration)/100)
 })
 
+
+Array.from(document.getElementsByClassName("songItemPlay")).forEach((element)=>{
+
+    element.addEventListener('click', (e)=>{
+
+        console.log(e)
+  
+        e.target.classList.remove('fa-play-circle')
+        
+        e.target.classList.add('fa-pause-circle')
+  
+    })
+})
