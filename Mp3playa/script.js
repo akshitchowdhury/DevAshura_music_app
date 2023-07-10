@@ -4,6 +4,8 @@ let songIndex = 0;
 
 let audioElement = new Audio('song-list/0.mp3')
 
+let songBanner = document.getElementById("songBanner")
+
 
 // audioElement.play()
 
@@ -159,6 +161,10 @@ document.getElementById('next').addEventListener('click', ()=>{
     
     masterPlay.classList.add('fa-pause-circle')
 
+    songBanner.innerText = songs[songIndex].songName
+
+
+
 })
 
 
@@ -186,5 +192,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     
     masterPlay.classList.add('fa-pause-circle')
 
+    
+    songBanner.innerText = songs[songIndex].songName
 })
 
