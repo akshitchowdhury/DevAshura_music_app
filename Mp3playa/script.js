@@ -132,6 +132,8 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach((element)=>{
         
         masterPlay.classList.add('fa-pause-circle')
   
+        gif.style.opacity = 1
+    songBanner.innerText = songs[songIndex].songName
     })
 
 
